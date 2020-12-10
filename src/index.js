@@ -72,6 +72,10 @@ async function main(
       const linkedIssues = new Set();
       const octokit = github.getOctokit(token);
 
+      core.info(
+        `cleanKeywords ${cleanKeywords}`
+      );
+
       const payload = /**
        * @type {import('@octokit/webhooks').EventPayloads.WebhookPayloadPullRequest}
        */ (github.context.payload);
